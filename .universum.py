@@ -3,7 +3,7 @@
 from universum.configuration_support import Configuration, Step
 
 configs = Configuration([
-    Step(name='Run script', command=['python3.7', 'run.py', 'pass']),
+    Step(name='Run script', command=['python3.7', 'run.py', 'pass'], artifacts="execution.log"),
     dict(name="Pylint check", code_report=True, command=[
         "python3.7", "-m", "universum.analyzers.pylint", "--result-file", "${CODE_REPORT_FILE}", "--files", "*.py"
     ])
